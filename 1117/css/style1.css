@@ -1,0 +1,129 @@
+div {
+  height: 50px;
+  margin-bottom: 10px;
+  background: pink;
+}
+
+div:nth-of-type(1) {
+  width: 100px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+    100*4=400
+    100*5=500
+    100*6=600
+  */
+}
+
+div:nth-of-type(2) {
+  width: 200px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+    100*4=400
+    100*5=500
+    100*6=600
+  */
+}
+
+div:nth-of-type(3) {
+  width: 300px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+    100*4=400
+    100*5=500
+    100*6=600
+  */
+}
+
+div:nth-of-type(4) {
+  width: 400px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+    100*4=400
+    100*5=500
+    100*6=600
+  */
+}
+
+div:nth-of-type(5) {
+  width: 500px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+    100*4=400
+    100*5=500
+    100*6=600
+  */
+}
+
+div:nth-of-type(6) {
+  width: 600px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+    100*4=400
+    100*5=500
+    100*6=600
+  */
+}
+
+.list01 > li {
+  background: orange;
+  margin-bottom: 10px;
+}
+.list01 > li:nth-child(1) {
+  width: 100px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+  */
+}
+.list01 > li:nth-child(2) {
+  width: 200px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+  */
+}
+.list01 > li:nth-child(3) {
+  width: 300px;
+  /*
+    100*1=100
+    100*2=200
+    100*3=300
+  */
+}
+
+article h2:nth-child(1) {
+  background: violet;
+}
+article h2:nth-child(2) {
+  background: skyblue;
+}
+article h2:nth-child(3) {
+  background: gray;
+}
+
+section h2:nth-child(1) {
+  font-size: 30px;
+  color: violet;
+}
+section h3:nth-of-type(1) {
+  font-size: 24px;
+  color: skyblue;
+}
+section h4:nth-of-type(1) {
+  font-size: 18px;
+  color: gray;
+}/*# sourceMappingURL=style1.css.map */

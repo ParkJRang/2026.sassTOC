@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+//style1.css
+
+//서식
+div{
+  height:50px;
+  margin-bottom:10px;
+  background:pink;
+}
+// @for $i from 1 to 6{
+//   div:nth-of-type(#{$i}){
+//     width:50px*$i;
+//     /*
+//       50*1=50
+//       50*2=100
+//       50*3=150
+//       50*4=200
+//       50*5=250
+//     */
+//   }
+// }
+@for $i from 1 through 6{
+  div:nth-of-type(#{$i}){
+    width:100px*$i;
+    /*
+      100*1=100
+      100*2=200
+      100*3=300
+      100*4=400
+      100*5=500
+      100*6=600
+    */
+  }
+}
+//반복문 while문
+$j:1;//초기값
+
+.list01 > li{
+  background:orange;
+  margin-bottom:10px;
+  @while $j<=3{//j변수값이 3이하일 때까지 반복실행
+    &:nth-child(#{$j}){
+      width:100px*$j;
+      /*
+        100*1=100
+        100*2=200
+        100*3=300
+      */
+    }
+    $j:$j+1;//1씩 증가
+  }
+}
+//Lists배열 서식적용
+$color:violet, skyblue, gray;
+article{
+  h2:nth-child(1){background:nth($color,1)}
+  h2:nth-child(2){background:nth($color,2)}
+  h2:nth-child(3){background:nth($color,3)}
+}
+//Maps배열 서식적용하기
+$fontSize:('large':30px, 'medium':24px, 'small':18px);
+section{
+  h2:nth-child(1){
+    // 글자크기를 map배열에서 가져와 $fontSize 값을 가각 적용
+    font-size:map-get($fontSize, 'large');
+    color:nth($color,1);
+  }
+  h3:nth-of-type(1){
+    font-size:map-get($fontSize, 'medium');
+    color:nth($color,2);
+  }
+  h4:nth-of-type(1){
+    font-size:map-get($fontSize, 'small');
+    color:nth($color,3);
+  }
+}

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+.title01 {
+  color: #f00;
+  background: #ff0;
+  box-sizing: border-box;
+  color: #f0f;
+  background: #0f0;
+}
+
+.title02 {
+  color: #f00;
+  background: #ff0;
+  color: #00f;
+  box-sizing: border-box;
+}
+
+.title01:hover, .title02:hover {
+  outline: 2px solid #000;
+}
+
+.p01 {
+  overflow: hidden; /*영역 벗어나면 숨기기*/
+  white-space: nowrap; /*글자 무조건 한줄로*/
+  text-overflow: ellipsis; /*잘린 글자 ... 표시*/
+  width: 340px;
+  border: 1px solid #f00;
+  background: #0f0;
+}
+
+.reset {
+  font-family: "Noto sans";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #aeaeae;
+  background: rgb(95, 0, 128);
+  padding: 0 10px;
+  width: 170px;
+  height: 56px;
+  cursor: pointer;
+  background: #aeaeae;
+  color: #111;
+}
+
+.reset:hover {
+  font-family: "Noto sans";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #aeaeae;
+  background: rgb(95, 0, 128);
+  padding: 0 10px;
+  width: 170px;
+  height: 56px;
+  cursor: pointer;
+  background: #111;
+  color: #aeaeae;
+}
+
+.cart {
+  font-family: "Noto sans";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #aeaeae;
+  background: rgb(95, 0, 128);
+  padding: 0 10px;
+  width: 170px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.cart:hover {
+  font-family: "Noto sans";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #aeaeae;
+  background: rgb(95, 0, 128);
+  padding: 0 10px;
+  width: 170px;
+  height: 56px;
+  cursor: pointer;
+  color: rgb(95, 0, 128);
+  background: #fff;
+}
+
+/*이걸로 for문 돌려서 버튼마다 서식을 적용한다?*/
+#toggle {
+  position: absolute;
+  left: -9999px;
+} /*체크박스 숨기기*/
+.toggle_btn, .toggle {
+  width: 40px;
+  height: 32px;
+  display: block;
+}
+
+.toggle {
+  position: absolute;
+  left: 100px;
+  bottom: -116px;
+}
+
+.bar {
+  width: 32px;
+  height: 4px;
+  background: #333;
+  border-radius: 4px;
+  display: block;
+  transition: 0.5s;
+}
+
+.bar1, .bar2, .bar4, .bar5 {
+  margin-bottom: 8px;
+}
+
+#toggle:checked + label .bar1 {
+  position: relative;
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+#toggle:checked + label .bar2 {
+  display: none;
+}
+
+#toggle:checked + label .bar3 {
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.bar4_checked {
+  position: relative;
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+.bar5_checked {
+  display: none;
+}
+
+.bar6_checked {
+  position: relative;
+  transform: rotate(-45deg);
+}/*# sourceMappingURL=style2.css.map */

@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+//style.css
+
+//변수
+$width1:1200px;//pc해상도
+$width2:1024px;//tablet_max해상도
+$width3:768px;//tablet_min해상도
+$width4:390px;//mobile해상도
+//@mixin
+@mixin box{
+  height:50px;
+  border:3px solid #000;
+  margin-bottom:20px;
+}
+//서식
+div{@include box;}
+.pc{
+  width:$width1;
+  background:if($width1>800,pink,lightblue);
+}
+.tablet{
+  width:$width2;
+  background:if($width2>800,pink,lightblue);
+}
+.mobile{
+  width:$width3;
+  background:if($width3>800,pink,lightblue);
+}
+.box03{
+  width:$width3;
+  @if($width3>=768){
+    background:pink;
+  }@else{
+    background:#ff0;
+  }
+}
+.box04{
+  width:$width2;
+  @if($width2>=1024){
+    background:#ff0;
+  }@else{
+    background:#555;
+  }
+}

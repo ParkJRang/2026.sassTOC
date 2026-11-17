@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+//변수명:값;
+$bg_color:#ff0;
+$bg_color1:#ccc;
+$margin_none:0;
+
+
+h2{background:$bg_color;display:inline-block;}
+p{background:$bg_color1;}
+dl dd{margin:$margin_none;}

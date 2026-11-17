@@ -1,0 +1,53 @@
+#wrap {
+  width: 1180px;
+  border: 2px solid #000;
+  margin: 0 auto;
+}
+#wrap .box1 {
+  height: 100px;
+  margin: 10px 0;
+  width: 98.3333333333px;
+  background: #e58a8a;
+}
+#wrap .box2 {
+  height: 100px;
+  margin: 10px 0;
+  width: 590px;
+  background: #dcdc7c;
+}
+#wrap .box3 {
+  height: 100px;
+  margin: 10px 0;
+  width: 1180px;
+  background: #7676ce;
+}
+
+.btn {
+  background: #e134ad;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+.btn.btn2 {
+  background: rgb(231.5665236052, 96.4334763948, 190.9484978541);
+}
+.btn.btn3 {
+  opacity: 0.8;
+}
+.btn.btn4 {
+  opacity: 0.6;
+}
+.btn.btn5 {
+  opacity: 0.4;
+}
+.btn.btn6 {
+  opacity: 0.3;
+}
+.btn.btn7 {
+  opacity: 0.2;
+}
+.btn.btn8 {
+  opacity: 0.1;
+}/*# sourceMappingURL=style2.css.map */

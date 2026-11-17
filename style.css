@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* Pretendard 웹폰트 임포트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+  --sass-pink: #cf649a;
+  --sass-pink-dark: #a84879;
+  --sass-pink-light: #fdf2f8;
+  --bg-page: #f4f5f7;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-sub: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-hover: 0 12px 28px rgba(207, 100, 154, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상단 헤더 영역 (겹침 현상 해결: 여유 있는 패딩 확보) */
+header {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #ffffff;
+  padding: 4rem 1.5rem 3.5rem;
+  text-align: center;
+  border-bottom: 4px solid var(--sass-pink);
+}
+
+header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* 메인 컨텐츠 영역 (겹침 현상 방지를 위한 안전한 마진 적용) */
+main {
+  max-width: 1080px;
+  width: 100%;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* 일차별 카드 (dl) */
+main dl {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+main dl:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(207, 100, 154, 0.4);
+}
+
+/* 일차 제목 (dt) */
+main dt {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--sass-pink-dark);
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 2px solid var(--sass-pink-light);
+  display: flex;
+  align-items: center;
+}
+
+/* Sass 컨셉을 보여주는 가상 요소 뱃지 */
+main dt::before {
+  content: "$day";
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--sass-pink-light);
+  color: var(--sass-pink-dark);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  margin-right: 0.6rem;
+}
+
+/* 학습 항목 리스트 (dd) */
+main dd {
+  margin-bottom: 0.5rem;
+}
+
+main dd:last-child {
+  margin-bottom: 0;
+}
+
+/* 링크 기본 상태 (호버 서식이 오적용되지 않도록 초기화 명확화) */
+main dd a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-sub);
+  font-size: 0.94rem;
+  font-weight: 500;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, font-weight 0.2s ease;
+  min-height: 44px;
+}
+
+main dd a::after {
+  content: "→";
+  font-size: 0.95rem;
+  color: var(--sass-pink);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* 명확한 마우스 오버(Hover) 및 포커스(Focus) 시에만 적용되도록 수정 */
+main dd a:hover,
+main dd a:focus-visible {
+  background-color: var(--sass-pink-light);
+  color: var(--text-main);
+  border-color: rgba(207, 100, 154, 0.3);
+  font-weight: 600;
+  outline: none;
+}
+
+main dd a:hover::after,
+main dd a:focus-visible::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 푸터 영역 */
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+footer address {
+  font-style: normal;
+  margin-bottom: 0.35rem;
+  color: var(--text-sub);
+}
+
+/* 모바일 반응형 처리 */
+@media (max-width: 640px) {
+  header {
+    padding: 3rem 1.25rem;
+  }
+  main {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+}

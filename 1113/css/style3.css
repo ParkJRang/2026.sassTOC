@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/*변수*/
+/*변수*/
+/*@mixin*/
+/*@mixin*/
+.p_box * {
+  margin: 0;
+  padding: 0;
+}
+
+.p_box {
+  width: 1000px;
+  height: 558px;
+  position: relative;
+  border: 1px solid #222;
+}
+
+.p_box h2 {
+  text-align: center;
+  color: #fff;
+  background: #379aae;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.p_box div {
+  width: 465px;
+  margin: 20px;
+}
+
+.p_box div img {
+  width: 100%;
+}
+
+.p_box ul {
+  list-style: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+}
+
+.p_box li {
+  width: 465px;
+  margin: 20px;
+  display: flex;
+}
+
+.p_box li div {
+  flex-direction: column;
+  margin: 0;
+}
+
+.p_box li img {
+  width: 215px;
+  margin-right: 20px;
+}
+
+.p_box p {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.p_box .price {
+  color: #f04d4d;
+  text-align: right;
+}
+
+.p_box div p {
+  margin-top: 10px;
+}
+
+.p_box div .price {
+  margin-top: 20px;
+}
+
+.p_box2 * {
+  margin: 0;
+  padding: 0;
+}
+
+.p_box2 {
+  width: 1000px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 300px;
+}
+
+.p_box2 h2 {
+  text-align: center;
+  color: #fff;
+  background: #379aae;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.p_box2 ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+.p_box2 li:first-child {
+  width: 90%;
+  margin: 3.4% 0 0 3.4%;
+}
+
+.p_box2 li:not(:first-child) {
+  width: 90%;
+  margin: 3.4% 3.4% 3.4% 0;
+}/*# sourceMappingURL=style3.css.map */

@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+//subwya.css
+//변수
+$max_width:1170px;
+$box_center:0 auto;
+$main_color1:#009223;
+$main_color2:#ffce32;
+$bg_color:#333;
+$text_color:#777;
+
+//함수
+@function my_lighten($num){
+  @return 0.1*$num;
+}
+//.f_lnb의 두번째 글자만 밝게
+// .f_lnb li:nth-child(2) a{
+//   color:rgba(255, 255, 255, my_lighten(9));
+// }
+//서식
+*{margin:0; padding:0;}
+ul, li{list-style:none;}
+a{text-decoration:none;}
+header{
+  border-top:5px solid $main_color1;
+  height:200px;
+  text-align:center;
+  > h1{padding:10px 0;}
+  > ul{
+    display:flex;
+    width:970px;
+    margin:$box_center;
+    padding:0 100px;
+    justify-content:space-between;
+    > li{
+      > a{
+        color:#000;
+      }
+    }
+  }
+}
+main{
+  height:400px;
+  > h2{
+    font-size:36px;
+    text-align:center;
+  }
+}
+footer{
+  background:$bg_color;
+  > .f_lnb{
+    display:flex;
+    width:$max_width;
+    margin:$box_center;
+    justify-content:left;
+    > li{
+      line-height:50px;
+      margin:0 10px;
+      > a{
+        color:rgba(255,255,255,my_lighten(4));
+      }
+    }
+    > li:nth-child(2){
+      > a{
+        color:rgba(255, 255, 255, my_lighten(9));
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style.css" rel="stylesheet" type="text/css">
+  <title>09_sass 중첩규칙</title>
+</head>
+<body>
+  <h2>09_sass 중첩규칙</h2>
+  <p>중첩이란? 겹치거나 포개기</p>
+  <ul>
+    <li>선택자를 중첩하는 '규칙중첩'</li>
+    <li>속성을 중첩하는 '속성중첩'</li>
+  </ul>
+
+  <p>sass의 nesting(중첩)은 태그가 자손 혹은 후손인 경우 {} 코드블럭으로 중첩하여 작성하는 기법을 말함</p>
+  <p>css의 경우 부모요소를 반복해서 작성하는데, sass의 중첩규칙은 부모요소를 반복해서 작성하지 않아도 됨</p>
+  <p>ex) .wrap > div, .wrap > article, .wrap > ul......</p>
+  <p>복잡한 구조 형태의 작업에 있어서 상위 선택자를 많이 상속해야 할 경우(부모) css규칙을 간단하게 작성할 수 있으며, 그 구조를 한눈에 볼 수 있게 '모듈화' 할 수 있음</p>
+  <p>중첩은 무분별하게 사용하는 것은 권장하지 않음</p>
+  <p>상위 선택자를 3deapth이상 사용할 경우 재활용이 제한적(별도 클래스 생성 권장)</p>
+  
+  <div class="list">
+    <h3>sass 중첩규칙과 속성 적용하기</h3>
+    <ul>
+      <li><a href="#" title="">텍스트 링크</a></li>
+      <li><a href="#" title="">텍스트 링크</a></li>
+      <li><a href="#" title="">텍스트 링크</a></li>
+    </ul>
+  </div>
+
+  <h3>탭컨텐츠</h3>
+  <div class="tab">
+    <div class="tabcon">
+      <img src="./images/img1.jpg" alt="" id="banner">
+    </div>
+    <ul>
+      <li><a href="./images/img1.jpg" title="">모두페이 즉시할인</a></li>
+      <li><a href="./images/img2.jpg" title="">신한카드 캐시백</a></li>
+      <li><a href="./images/img3.jpg" title="">우리카드 청구할인</a></li>
+      <li><a href="./images/img4.jpg" title="">롯데카드 결제일 할인</a></li>
+    </ul>
+  </div>
+
+  <dl>
+    <dt>구현방법</dt>
+    <dd>사용자가 ul > li > a에 마우스 오버시 href속성값을 변수에 담음(imgurl)</dd>
+    <dd>ul > li > a변수 선언</dd>
+    <dd>imgurl변수값을 'banner'src속성값에 대입</dd>
+    <dd>js문법 : getAttribute(가져오기), setAttricute(적용하기)</dd>
+  </dl>
+  <script>
+    //변수
+    const tab_menu = document.querySelectorAll('.tab > ul > li > a');
+    const b_img = document.getElementById('banner');
+    //마우스 오버 이벤트시 각각 a요소에 기능 구현
+    tab_menu.forEach(function(item,index){
+      item.addEventListener('mouseenter',function(){
+        let url = this.getAttribute('href');
+        console.log(url);
+        //b_img의 src속성값에 url변수값 대입하여 적용하기
+        b_img.setAttribute('src', url);
+      });
+    });
+  </script>
+</body>
+</html>

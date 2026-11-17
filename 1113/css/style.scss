@@ -1,0 +1,55 @@
+@charset "utf-8";
+//1113_06_sass문법_변수의개념과활용 css파일
+
+//변수선언
+$baseFont:"맑은 고딕", arial, sans-serif;
+$baseFontColor:#333;
+$txtColor_w:#fff;
+$lFontsize:30px;
+$baseFontSize:16px;
+$sFontsize:13px;
+
+$bgColor:#ff0;
+
+$boxW:1200px;/*사이트 컨텐츠 영역 너비*/
+$boxC:0 auto;/*margin활용 가운데정렬 변수*/
+$fontC:center;/*글자 정렬 변수*/
+$innerPadding:20px 10px;
+$boxSizing:border-box;//박스 커지지 않게 하는 변수
+$border_1:1px solid red;
+
+
+body{
+  font-family:$baseFont;
+  font-size:$baseFontSize;
+  color:$baseFontColor;
+}
+header, main, footer{
+  padding:$innerPadding;
+  box-sizing:$boxSizing;
+}
+header, footer{
+  background:$baseFontColor;
+  color:$txtColor_w;
+}
+
+header > h1{
+  font-size:$lFontsize;
+}
+
+main{
+  width:$boxW;
+  margin:$boxC;
+  background:$bgColor;
+  border:$border_1;
+}
+
+section > h2{
+  text-align:$fontC;
+  font-size:$lFontsize;
+}
+
+address{
+  text-align:$fontC;
+  font-style:normal;
+}

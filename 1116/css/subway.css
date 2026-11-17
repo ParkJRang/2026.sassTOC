@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  border-top: 5px solid #009223;
+  height: 200px;
+  text-align: center;
+}
+header > h1 {
+  padding: 10px 0;
+}
+header > ul {
+  display: flex;
+  width: 970px;
+  margin: 0 auto;
+  padding: 0 100px;
+  justify-content: space-between;
+}
+header > ul > li > a {
+  color: #000;
+}
+
+main {
+  height: 400px;
+}
+main > h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+footer {
+  background: #333;
+}
+footer > .f_lnb {
+  display: flex;
+  width: 1170px;
+  margin: 0 auto;
+  justify-content: left;
+}
+footer > .f_lnb > li {
+  line-height: 50px;
+  margin: 0 10px;
+}
+footer > .f_lnb > li > a {
+  color: rgba(255, 255, 255, 0.4);
+}
+footer > .f_lnb > li:nth-child(2) > a {
+  color: rgba(255, 255, 255, 0.9);
+}/*# sourceMappingURL=subway.css.map */

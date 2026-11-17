@@ -1,0 +1,87 @@
+@charset "utf-8";
+//1113_08_sass실습1.html 적용 css
+
+/*변수*/
+$p_title_size:1rem;
+$p_box_title_size:1.5rem;
+
+$p_title_color:#333;
+$price_color:#f04d4d;
+$p_box_bgcolor:#379aae;
+
+$padding_1:20px;
+$padding_2:10px;
+$mar_first:3.4%;
+/*변수*/
+
+/*@mixin*/
+//
+@mixin pBoxTitle{
+  text-align:center;
+  color:#fff;
+  background:$p_box_bgcolor;
+  font-size:$p_box_title_size;
+  font-weight:600;
+  padding:10px 0;
+}
+@mixin pTitle{
+  font-size:$p_title_size;
+  color:$p_title_color;
+  font-weight:500;
+}
+@mixin contentSize{
+  width:465px;
+  margin:$padding_1;
+}
+/*@mixin*/
+
+//서식
+.p_box *{margin:0; padding:0;}
+.p_box {
+  width:1000px; height:558px;
+  position:relative; border:1px solid #222;
+}
+
+.p_box h2{@include pBoxTitle;}
+
+.p_box div{
+  @include contentSize;
+}
+.p_box div img{width:100%;}
+
+.p_box ul{list-style:none;position:absolute;top:55px; right:0;}
+.p_box li{@include contentSize; display:flex;}
+.p_box li div{flex-direction:column; margin:0;}
+.p_box li img{width:215px; margin-right:$padding_1;}
+
+.p_box p{@include pTitle;}
+.p_box .price{color:$price_color; text-align:right;}
+.p_box div p{margin-top:$padding_2;}
+.p_box div .price{margin-top:$padding_1;}
+
+//최대한 적응형으로 해보기
+.p_box2 *{margin:0; padding:0;}
+.p_box2 {
+  width:1000px; position:relative; 
+  margin:0 auto;
+  margin-top:300px;
+}
+
+.p_box2 h2{@include pBoxTitle;}
+
+.p_box2 ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  width:60%;
+}
+.p_box2 li{}
+.p_box2 li:first-child{
+  width:90%;
+  margin:$mar_first 0 0 $mar_first;
+}
+.p_box2 li:not(:first-child){
+  width:90%;
+  margin:$mar_first $mar_first $mar_first 0;
+}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style1.css" rel="stylesheet" type="text/css">
+  <title>14_sass문법_내장함수(반복문)</title>
+</head>
+<body>
+  <h2>14_sass문법_내장함수(반복문)</h2>
+  <p>반복문 종류 - for문, while문, do while문, forEach</p>
+  <p>sass에서의 반복문 - while, each, for문</p>
+  <ul>
+    <li>for</li>
+    <li>while</li>
+    <li>each</li>
+  </ul>
+
+  <h3>1. @for문</h3>
+  <p>@for 키워드는 '스타일을 반복적'으로 출력하는데 사용됨</p>
+  <p>javascript의 for문과 유사함</p>
+  <pre>
+    문법1)
+    trough : 종료 만큼 반복
+    @for $변수 from 시작 through 종료{
+      //반복할 내용
+    }
+
+    문법2)
+    to : 종료 전까지 반복
+    @for $변수 from to 종료{
+      //반복할 내용
+    }
+  </pre>
+  <p>$변수 => #{변수}</p>
+  <p>#{변수}는 코드 어디든지 변수 값 적용 가능</p>
+  <p>ex) $img:unquote('./img/#{$img}');</p>
+  <p>h1{background-image:url('./img/#{$img}');}</p>
+
+  <h3>@for문 실습 - through</h3>
+  <p>div태그가 가로폭을 50px ~ 250px까지 각각 서식이 적용되게 하기</p>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <p>through는 마지막 번째까지 서식이 적용되고, to는 마지막 바로 전까지만 서식이 적용됨</p>
+
+  <h3>2. @while문</h3>
+  <p>@while도 반복문</p>
+  <p>잘못된 조건을 작성시 '무한루프'에 빠지기 때문에 권장안함</p>
+  <pre>
+    @while 조건식{
+      //반복할 내용
+    }
+    //js에서의 while문 2가지
+    방법1. 
+    while(조건식){
+      //반복할 내용;
+    }
+    방법2.
+    do{
+      //반복할 내용;
+    }while(조건식)
+  </pre>
+  <ul class="list01">
+    <li>목록1</li>
+    <li>목록2</li>
+    <li>목록3</li>
+  </ul>
+  <h3>3. @each문</h3>
+  <h3>4. Lists와 Maps데이터</h3>
+  <p>Lists와 Mpas는 데이터를 여러 개 나열해서 담는 것을 의미</p>
+  <p>js에서 학습한 배열과 객체라고 이해하면 됨</p>
+  <pre>
+    let array = new Array(값1, 값2, 값3, 값4......);
+    let fruits = ['사과', '배', '수박', '감', '복숭아'];
+
+    1. Lists문법
+    문법)
+    $변수명 : 값1, 값2, 값3, 값4......;
+    $변수명 : (값1, 값2, 값3, 값4......);
+    $변수명 : 값1 값2 값3 값4......;
+
+    2. Maps문법
+    작성법)
+    $변수명 : ('키명':값, '키명':값, '키명':값);
+    Lists와 다르게 괄호 반드시 사용
+  </pre>
+
+  <h3>Lists배열 서식 적용하기</h3>
+  <article>
+    <h2>제목요소1</h2>
+    <h2>제목요소2</h2>
+    <h2>제목요소3</h2>
+  </article>
+
+  <h3>Maps배열 서식 적용하기</h3>
+  <section>
+    <h2>제목요소</h2>
+    <h2>제목요소</h2>
+    <h2>제목요소</h2>
+    <h3>제목요소</h3>
+    <h4>제목요소</h4>
+  </section>
+</body>
+</html>

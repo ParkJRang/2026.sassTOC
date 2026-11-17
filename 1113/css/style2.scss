@@ -1,0 +1,102 @@
+@charset "utf-8";
+//1113_07_믹스인함수매개변수활용.html 적용 css
+
+//변수
+$b_f_color:#333;//기본 폰트 색상
+$p_f_color:rgb(41, 130, 207);//강조 폰트 색상
+$anime_time:0.3s;//transition 애니메이션 시간속성
+//변수
+
+/*@mixin 선언영역*/
+//1. sns서식
+@mixin sns{
+  font-size:2rem;
+  color:$b_f_color;
+}
+@mixin snsHover{
+  color:$p_f_color;
+  cursor:pointer;
+}
+/*@mixin 선언영역*/
+
+//서식 적용
+.sns{
+  @include sns; 
+  list-style:none;
+  width:260px;
+  display:flex;
+  justify-content:space-between;
+}
+.sns li i{transition:$anime_time;}
+.sns li:hover i{
+  @include snsHover;
+  transform:translateY(-4px) scale(1.2);
+}
+
+//mixin에 매개변수 할당하여 처리하기
+@mixin divBox($bgColor1, $borderColor1){
+  background:$bgColor1;
+  border:3px solid $borderColor1;
+}
+#box01{@include divBox(#0f0, #f0f)}
+#box02{@include divBox(#ad44fd,#a9a8f2)}
+//로그인버튼 서식
+@mixin btn{
+  width:200px; height:40px;
+  border:none;
+  text-align:center;
+}
+@mixin loginBtn($bgColor_sns, $fColor_sns){
+  background:$bgColor_sns;
+  color:$fColor_sns;
+}
+@mixin loginBtn2{
+  width:40px; line-height:40px;
+  margin-right:10px;
+}
+.btn{@include btn;}
+
+.btn1{@include loginBtn(#5f0080, #fff);}
+.fa-k{@include loginBtn(#5f0080, #fff); @include loginBtn2;}
+
+.btn2{@include loginBtn(#03c75a, #fff);}
+.fa-n{@include loginBtn(#03c75a, #fff); @include loginBtn2;}
+
+.btn3{@include loginBtn(yellow, #222);}
+.fa-kakao-talk{@include loginBtn(yellow, #2c1a1a); @include loginBtn2;}
+
+//.list01 목록태그 기본값 설정
+@mixin borderStyle($w:1px, $s:solid, $c:#ccc){
+  border:$w, $s, $c;
+  margin:4px 0;
+}
+
+.list01 li:first-child{@include borderStyle;}
+.list01 li:nth-child(2){@include borderStyle(3px, solid, #222);}
+.list01 li:nth-child(3){@include borderStyle(3px, double, #f0f);}
+.list01 li:nth-child(4){@include borderStyle(3px, dotted, #00f);}
+.list01 li:last-child{@include borderStyle(3px, dashed, #0f0);}
+
+//달력서식
+$cal_w:600px;
+@mixin cal_border($w:1px, $s:solid, $c:#00f){
+  border:$w, $s, $c;
+  text-align:center;
+}
+@mixin cal_caption($bg:#ff0){
+  text-align:center;
+  background:$bg;
+  padding:10px 0;
+  font-weight:bold;
+}
+@mixin oddTr($bg:#ffebeb){
+  background:$bg;
+}
+@mixin evenTr($bg:#e5e0ff){
+  background:$bg;
+}
+.calendar{@include cal_border; width:$cal_w; border-collapse:collapse;}
+.calendar caption{@include cal_caption;}
+.calendar th, .calendar td{@include cal_border; width:40px}
+.calendar tr:nth-child(2n){@include evenTr;}
+.calendar tr:nth-child(2n-1){@include oddTr;}

@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+//style2.scss
+
+//변수
+$max_width:1180px;
+
+//12개의 그리드 컬럼
+//박스가 가지는 컬럼에 따라 가로크기 지정되는 함수 작성
+@function column($number:1, $all:12){
+  @return $max_width*($number/$all);
+  //1180*('number'/12)
+}
+
+#wrap{
+  width:$max_width;
+  border:2px solid #000;
+  margin:0 auto;
+  .box1{
+    height:100px; margin:10px 0;
+    width:column(1); background:#e58a8a;
+  }
+  .box2{
+    height:100px; margin:10px 0;
+    width:column(6); background:#dcdc7c;
+  }
+  .box3{
+    height:100px; margin:10px 0;
+    width:column(12); background:#7676ce;
+  }
+}
+//내장함수로 버튼 서식 적용하기
+//변수
+$btnBgColor:#e134ad;
+$btnFColor:#fff;
+@mixin btn{
+  background:$btnBgColor;
+  border:none;
+  cursor:pointer;
+  padding:6px 10px;
+  color:$btnFColor;
+  border-radius:5px;
+}
+//함수
+@function my_lighten($num){
+  @return 0.1*$num;
+}
+.btn{
+  @include btn;
+  &.btn2{
+    background:lighten($color:$btnBgColor, $amount:10%);
+  }
+  &.btn3{opacity:my_lighten(8);}
+  &.btn4{opacity:my_lighten(6);}
+  &.btn5{opacity:my_lighten(4);}
+  &.btn6{opacity:my_lighten(3);}
+  &.btn7{opacity:my_lighten(2);}
+  &.btn8{opacity:my_lighten(1);}
+}
+
+

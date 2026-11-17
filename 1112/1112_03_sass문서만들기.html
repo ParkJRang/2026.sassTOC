@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <title>03_sass문서만들기</title>
+</head>
+<body>
+  <h2>03_sass문서만들기</h2>
+  <p>sass문법으로 css파일 생성하여 구조 살펴보기</p>
+  <dl>
+    <dt>순서</dt>
+    <dd>html문서를 작성</dd>
+    <dd>scss문서 저장, 서식을 작성</dd>
+    <dd>live sass compiler를 실행하여 .css문서 제작(map파일 생성)</dd>
+    <dd>저장된 파일 구조 살펴보기</dd>
+  </dl>
+  <ol>
+    <li>scss파일은 컴파일 과정을 거쳐 .css문서로 제작됨</li>
+    <li>서버에 업로드시 scss파일 제외하고 .css파일만 업로드</li>
+    <li>컴파일 과정에서 .map파일 같이 생성하는데, .map파일은 소스맵(.map파일)의 정보를 브라우저에게 제공하기 위한 파일</li>
+  </ol>
+
+  <dl>
+    <dt>소스맵이란?</dt>
+    <dd>압축된 css파일과 원본파일인 scss파일을 서로 연결하여 개발자들이 브라우저에서 원본파일을 쉽게 접근할 수 있도록 하는것</dd>
+    <dd>현업에서는 다른 사용자가 코드를 훔쳐볼 수 있기 때문에 보안상의 이유로 배포시 소스맵 지우고 배포함</dd>
+  </dl>
+</body>
+</html>

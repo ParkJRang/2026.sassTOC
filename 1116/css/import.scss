@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+//외부 scss파일 연결(확장자 생략가능)
+@import 'style1';
+
+//변수
+$bigFontSize:26px;
+$color:#00f;
+$background:#ccc;
+
+// 서식 적용
+h2{
+  font:{
+    family:'Noto Sans', arial, sans-serif;
+    size:$bigFontSize;
+  }
+  color:$color;
+  background:$background;
+}

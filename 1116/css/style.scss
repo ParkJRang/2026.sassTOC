@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+// 변수
+$margin:10px;
+$padding:14px;
+$r_color:#f00;
+// 변수
+
+// @mixin
+
+// @mixin
+
+// 서식
+.list{
+  > h3{
+  color:#333;
+  padding:$padding;
+  margin:$margin;
+  // font-family:'궁서체', arial, sans-serif;
+  // font-size:30px;
+  // font-weight:bold;
+  // font-style:italic;
+    font:{ // '-' 앞이 같은 글자인 속성의 경우 이와 같이 작성해도 적용됨
+      family:'궁서체', arial, sans-serif;
+      size:30px;
+      weight:bold;
+      style:italic;
+    }
+  }
+  > ul{
+    margin:0; padding:0;
+    > li{
+      list-style:none;
+    }
+  }
+}
+.tab{
+  *{margin:0; padding:0;}
+  width:650px; height:400px;
+  border:3px solid #000; overflow:hidden;
+  position:relative;
+  .tabcon{
+    img{width:100%;}
+  }
+  ul{
+    position:absolute;
+    right:10px; top:10px;
+    background:rgba(255,255,255,.5);
+    >li{
+      text-align:center;
+      list-style:none;
+      >a{
+        color:#333;
+        text-decoration:none;
+        line-height:70px;
+        font:{
+          size:12px;
+        }
+      }
+      &:hover{/*'&'연산자로 a:hover 표현, 안쓰면 css에서 'a :hover'되서 적용안됨*/
+        background:#ff0;
+      }
+    }
+  }
+}

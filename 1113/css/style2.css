@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*@mixin 선언영역*/
+/*@mixin 선언영역*/
+.sns {
+  font-size: 2rem;
+  color: #333;
+  list-style: none;
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sns li i {
+  transition: 0.3s;
+}
+
+.sns li:hover i {
+  color: rgb(41, 130, 207);
+  cursor: pointer;
+  transform: translateY(-4px) scale(1.2);
+}
+
+#box01 {
+  background: #0f0;
+  border: 3px solid #f0f;
+}
+
+#box02 {
+  background: #ad44fd;
+  border: 3px solid #a9a8f2;
+}
+
+.btn {
+  width: 200px;
+  height: 40px;
+  border: none;
+  text-align: center;
+}
+
+.btn1 {
+  background: #5f0080;
+  color: #fff;
+}
+
+.fa-k {
+  background: #5f0080;
+  color: #fff;
+  width: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.btn2 {
+  background: #03c75a;
+  color: #fff;
+}
+
+.fa-n {
+  background: #03c75a;
+  color: #fff;
+  width: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.btn3 {
+  background: yellow;
+  color: #222;
+}
+
+.fa-kakao-talk {
+  background: yellow;
+  color: #2c1a1a;
+  width: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.list01 li:first-child {
+  border: 1px, solid, #ccc;
+  margin: 4px 0;
+}
+
+.list01 li:nth-child(2) {
+  border: 3px, solid, #222;
+  margin: 4px 0;
+}
+
+.list01 li:nth-child(3) {
+  border: 3px, double, #f0f;
+  margin: 4px 0;
+}
+
+.list01 li:nth-child(4) {
+  border: 3px, dotted, #00f;
+  margin: 4px 0;
+}
+
+.list01 li:last-child {
+  border: 3px, dashed, #0f0;
+  margin: 4px 0;
+}
+
+.calendar {
+  border: 1px, solid, #00f;
+  text-align: center;
+  width: 600px;
+  border-collapse: collapse;
+}
+
+.calendar caption {
+  text-align: center;
+  background: #ff0;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.calendar th, .calendar td {
+  border: 1px, solid, #00f;
+  text-align: center;
+  width: 40px;
+}
+
+.calendar tr:nth-child(2n) {
+  background: #e5e0ff;
+}
+
+.calendar tr:nth-child(2n-1) {
+  background: #ffebeb;
+}/*# sourceMappingURL=style2.css.map */

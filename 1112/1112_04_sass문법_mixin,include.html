@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style2.css" type="text/css">
+  <title>04_sass문법_mixin/include기법</title>
+</head>
+<body>
+  <h2>1112_04_sass문법_믹싱/include기법</h2>
+  <p>sass의 mixin기법과 include기법에 대해 학습하기</p>
+
+  <h3>1. $mixin기법</h3>
+  <p>웹사이트 전체에 재사용할 css코드를 정의하는 문</p>
+  <pre>
+    @mixin mixin명{
+      //반복해서 사용할 스타일 서식을 작성
+    }
+  </pre>
+
+  <h3>2. @include기법</h3>
+  <p>@mixin을 선택자에 포함하는데 사용하는 지시문</p>
+  <pre>
+    css선택자{
+      @include mixin명;
+    }
+  </pre>
+
+    <h3><span class="title01">h3태그요소를 2개 작성하여 동일한 서식과 다른 서식 적용</span></h3>
+    <h3><span class="title02">mixin서식 적용하기</span></h3>
+    <p>위 h3태그에 배경:노랑, 글자색:빨강, 파랑 적용하기</p>
+
+    <p class="p01">믹스인 함수(txt_over)를 사용하여 글자 생략기호(...) 나오게하기</p>
+
+    <h3>03. @mixin 중첩사용</h3>
+    <pre>
+      @mixin 믹스인명 A{
+        //재사용할 스타일 서식 작성
+      }
+      @mixin 믹스인명 B{
+        //재사용할 스타일 서식 작성
+      }
+      @mixin 믹스인명 C{
+        @include 믹스인명 A;
+        @include 믹스인명 B;
+      }
+    </pre>
+    <p>실습1. 문단태그 안에 button요소 2개 작성하여 각각 다른 버튼 서식 적용</p>
+    <button class="reset">취소</button>
+    <button class="cart">장바구니 담기</button>
+
+    <p>실습2. 모바일 토글버튼 구현하기</p>
+    <!-- 1. css로 토글버튼 구현하기 -->
+    <input type="checkbox" id="toggle">
+    <label type="toggle" for="toggle" class="toggle_btn">
+      <span class="bar bar1">&nbsp;</span>
+      <span class="bar bar2">&nbsp;</span>
+      <span class="bar bar3">&nbsp;</span>
+    </label>
+    <!-- 2. js로 토글버튼 구현하기 -->
+    <div class="toggle">
+      <span class="bar bar4">&nbsp;</span>
+      <span class="bar bar5">&nbsp;</span>
+      <span class="bar bar6">&nbsp;</span>
+    </div>
+    <p>.toggle서식 작성하고 span태그요소 적용할 @mixin서식 만든 후 css, js로 기능 구현. 누르면 X, 다시 클릭시 원래 모양으로</p>
+    <script>
+      const toggle = document.querySelector('.toggle');
+      const bar = document.querySelectorAll('.toggle span');
+      const bar4 = document.querySelector('.bar4');
+      const bar5 = document.querySelector('.bar5');
+      const bar6 = document.querySelector('.bar6');
+      let n=0; //초기값 설정
+      toggle.addEventListener('click',function(){
+        if(n==0){
+          bar4.classList.add('bar4_checked');
+          bar5.classList.add('bar5_checked');
+          bar6.classList.add('bar6_checked');
+          n=1;
+        }else{
+          bar4.classList.remove('bar4_checked');
+          bar5.classList.remove('bar5_checked');
+          bar6.classList.remove('bar6_checked');
+          n=0;
+        }
+      });
+      toggle.addEventListener('click',function(){
+        this.classList.toggle('active');
+        if(this.classList.contains('active')){
+          bar[0].classList.add('bar4_checked');
+          bar[1].classList.add('bar5_checked');
+          bar[2].classList.add('bar6_checked');
+        }else{
+          bar[0].classList.remove('bar4_checked');
+          bar[1].classList.remove('bar5_checked');
+          bar[2].classList.remove('bar6_checked');
+        }
+        // 조건문 안쓰고 isActive;라는 속성 같이 넣어줘도 된다고 함
+      });
+    </script>
+</body>
+</html>

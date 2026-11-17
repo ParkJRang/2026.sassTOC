@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style.css" rel="stylesheet" type="text/css">
+  <title>13_sass문법_내장함수(if문)</title>
+</head>
+<body>
+  <h2>13_sass문법_내장함수(if문)</h2>
+  <dl>
+    <dt>if문</dt>
+    <dd>조건에 따른 결과를 true/false로 나눠서 처리하는 삼항조건 연산자와 비슷한 문법</dd>
+    <dd>조건식이 true면 '참'의 값, 그렇지 않으면 '거짓'의 값을 반환 </dd>
+  </dl>
+
+  <pre>
+    //문법
+    if(조건식, 참값, 거짓값);
+
+    //삼항조건연산자
+    조건식?참값:거짓값
+  </pre>
+
+  <h3>실습1. 가로크기에 따른 배경서식 적용하기</h3>
+  <div class="pc"></div>
+  <div class="tablet"></div>
+  <div class="mobile"></div>
+
+  <h3>@if문법</h3>
+  <p>js if문과 비슷하게 사용</p>
+  <p>@else를 붙여 false일 경우를 실행, 다중 if문도 실행 가능</p>
+  <pre>
+    문법)
+    @if(조건){
+      //참일 경우 표현식
+    }
+
+    @if(조건){
+      //참일 경우 표현식
+    }@else{
+      //거짓일 경우 표현식
+    }
+
+    @if(조건식1){
+      //조건식1이 참일 경우 표현식
+    }@else if{
+      //조건식2가 참일 경우 표현식
+    }@else{
+      //조건식1,2가 거짓일 경우 표현식
+    }
+  </pre>
+
+  <h3>실습2. box03, box04 가로크기에 따른 배경서식 적용</h3>
+  <p>$width변수에 값 설정하여 조건이 맞으면 color1서식, 맞지 않으면 color2서식 적용</p>
+  <div class="box03"></div>
+  <div class="box04"></div>
+</body>
+</html>

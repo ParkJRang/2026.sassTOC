@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+//변수선언
+$bg_color_yellow:#ff0;
+$bg_color_green:#0f0;
+$bg_color_mk:rgb(95,0,128);
+
+$txt_color_red:#f00;
+$txt_color_blue:#00f;
+
+$border01:2px solid #000;
+
+$line_color_gray:#aeaeae;
+// mixin
+@mixin h3txt{
+  color:$txt_color_red;
+  background:$bg_color_yellow;
+}
+@mixin a{
+  color:#f0f;
+  background:$bg_color_green;
+}
+
+.title01{
+  @include h3txt;box-sizing:border-box;
+  @include a;
+}
+.title02{
+  @include h3txt;
+  color:$txt_color_blue;
+  box-sizing:border-box;
+}
+.title01:hover, .title02:hover{
+  outline:$border01;
+}
+
+// 실습1. 글자 생략기호(...) 나오게 하는 서식
+@mixin txt_over{
+  overflow:hidden; /*영역 벗어나면 숨기기*/
+  white-space:nowrap; /*글자 무조건 한줄로*/
+  text-overflow:ellipsis;/*잘린 글자 ... 표시*/
+}
+.p01{
+  @include txt_over;
+  width:340px;
+  border:1px solid #f00;
+  background:$bg_color_green;
+}
+
+// 버튼 글자서식
+@mixin btnFont{
+  font-family:"Noto sans";
+  font-weight:bold;
+  font-size:20px;
+  color:#fff;
+}
+
+// 버튼 모양서식
+@mixin btnArea{
+  border:1px solid $line_color_gray;
+  background:$bg_color_mk;
+  padding:0 10px;
+  width:170px; height:56px;
+}
+
+// 버튼 서식 합치기
+@mixin btn{
+  @include btnFont;//글자서식
+  @include btnArea;//버튼서식
+}
+
+// 버튼 서식 적용
+.reset{
+  @include btn;cursor:pointer;
+  background:$line_color_gray;
+  color:#111;
+}
+.reset:hover{
+  @include btn; cursor:pointer;
+  background:#111; color:$line_color_gray;
+}
+.cart{@include btn; cursor:pointer;}
+.cart:hover{
+  @include btn; cursor:pointer;
+  color:$bg_color_mk; background:#fff;
+}
+
+//변수
+$toggle_width:40px;
+
+$bar_width:4px;
+$bar_height:32px;
+$bar_color:#333;
+$bar_radius:4px;
+$bar_marginBottom:8px;
+
+$rotate1:rotate();
+$rotate2:rotate();
+
+// 토글 영역 서식
+@mixin t_area{width:$toggle_width; height:$bar_height;}
+// 토글 아이콘 서식
+@mixin t_icon{
+  width:$bar_height; height:$bar_width;
+  background:$bar_color; border-radius:$bar_radius;
+}
+@mixin bar1{
+  position:relative;
+  top:12px;
+  transform:rotate(45deg);
+}
+@mixin bar2{display:none;}
+@mixin bar3{
+  position:relative;
+  transform:rotate(-45deg);
+}
+@mixin toggle_bar{
+  @include bar1; @include bar2; @include bar3;
+}/*이걸로 for문 돌려서 버튼마다 서식을 적용한다?*/
+// 서식 적용
+#toggle{position:absolute; left:-9999px;}/*체크박스 숨기기*/
+.toggle_btn, .toggle{@include t_area; display:block;}
+.toggle{position:absolute; left:100px; bottom:-116px;}
+
+.bar{@include t_icon; display:block; transition:.5s;}
+.bar1, .bar2, .bar4, .bar5{margin-bottom:$bar_marginBottom;}
+
+// css로 서식 구현하기
+#toggle:checked + label .bar1{@include bar1;}
+#toggle:checked + label .bar2{@include bar2;}
+#toggle:checked + label .bar3{@include bar3;
+}
+// js로 적용할 서식
+.bar4_checked{@include bar1;}
+.bar5_checked{@include bar2;}
+.bar6_checked{@include bar3;}
